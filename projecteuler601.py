@@ -1,5 +1,4 @@
 import numpy as np
-#test
 
 def streak(n):
     i = 1
@@ -25,19 +24,6 @@ def find_multiplier(multiplier):
             break
     return m
 
-# multiplier = []
-#for i in range(10):
-#    multiplier.append(find_multiplier(multiplier))
-
-multiplier = [1,2,3,2,5,7,2,3,11,13,2,17,19,23,5,3,29,31,2,37,41]
-
-# multiplier_s = []
-# for i in range(1,20):
-#    multiplier_s.append(streak(np.prod(multiplier[:i])+1))
-
-multiplier_s = [1, 2, 3, 4, 6, 7, 8, 10, 12, 15, 16, 18, 22, 24, 26, 28, 30, 31, 36]
-
-
 def find_number(start, interval, upperbound):
     return (upperbound-start)/interval + 1
 
@@ -56,9 +42,24 @@ def pfunction(power):
             # print "{}+{}n\t{}".format(start,interval, n)
     return sum_n
 
-sum_of_sum = 0
-for i in multiplier_s[1:-1]:
-    sum_of_sum += pfunction(i)
-    # print pfunction(i),
+if __name__ == "__main__":
 
-# final asnwer = 1617243
+    # multiplier = []
+    #for i in range(10):
+    #    multiplier.append(find_multiplier(multiplier))
+
+    multiplier = [1,2,3,2,5,7,2,3,11,13,2,17,19,23,5,3,29,31,2,37,41]
+
+    # multiplier_s = []
+    # for i in range(1,20):
+    #    multiplier_s.append(streak(np.prod(multiplier[:i])+1))
+
+    multiplier_s = [1, 2, 3, 4, 6, 7, 8, 10, 12, 15, 16, 18, 22, 24, 26, 28, 30, 31, 36]
+
+    sum_p = 0
+    for i in multiplier_s[1:-1]:
+        sum_p += pfunction(i)
+        # print pfunction(i),
+
+    print sum_p + 1
+    # final asnwer = 1617243
