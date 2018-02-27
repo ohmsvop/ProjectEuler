@@ -8,3 +8,20 @@ def sieve(n):
         if s[i]:
             s[i*i: np1: i] = [0] * len(xrange(i*i, np1, i))
     return filter(None, s)
+
+def gcd(a,b):
+    assert type(a) == int
+    assert type(b) == int
+    if a < b:
+        a, b = b, a
+    while True:
+        r = a % b
+        if r == 0:
+            break
+        else:
+            a, b = b, r
+    return b
+
+def lcm(a,b):
+    r = gcd(a,b)
+    return a*b/r
