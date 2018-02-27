@@ -4,7 +4,7 @@ from utils import sieve
 from math import sqrt
 
 target = 600851475143
-primes = sieve(int(sqrt(target)))
+primes = sieve(int(target))
 
 p_index = 0
 target_factor = []
