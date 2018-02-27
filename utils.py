@@ -25,3 +25,19 @@ def gcd(a,b):
 def lcm(a,b):
     r = gcd(a,b)
     return a*b/r
+
+def prime_factorization(n):
+    primes = sieve(int(n))
+    p_index = 0
+    n_factor = []
+    while True:
+        p = primes[p_index]
+        if n < p:
+            break
+        elif n % p == 0:
+            n /= p
+            n_factor.append(p)
+        else:
+            p_index += 1
+
+    return n_factor
