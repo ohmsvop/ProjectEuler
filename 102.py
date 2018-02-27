@@ -1,4 +1,4 @@
-f = open("triangles.txt")
+f = open("data/102.txt")
 summ = 0
 
 for a in f.readlines():

@@ -1,4 +1,4 @@
-f = open("roman.txt")
+f = open("data/89.txt")
 saved = 0
 for l in f.readlines():
     # DCCCC -> CM, CCCC -> CD
