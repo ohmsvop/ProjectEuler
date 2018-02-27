@@ -1,4 +1,4 @@
-from eratosthenes import sieve
+from utils import sieve
 from itertools import permutations, product
 import re
 

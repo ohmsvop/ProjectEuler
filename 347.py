@@ -1,4 +1,4 @@
-from eratosthenes import sieve
+from utils import sieve
 from math import log, sqrt
 import time
 
