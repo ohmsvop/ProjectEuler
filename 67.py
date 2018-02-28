@@ -3,10 +3,7 @@ summ = [0]
 
 for l in f.readlines():  
     newline = [int(num) for num in l.split()]
-    history = []
-    for i in summ:
-        history.append(i)
-        
+    history = summ[:]
     summ[0] = history[0] + newline[0]        
     for i in range(1,len(newline)-1):
         summ[i] = max(history[i-1]+newline[i],history[i]+newline[i])
