@@ -45,3 +45,14 @@ def prime_factorization(n):
             p_index += 1
     c = Counter(n_factor)
     return c
+
+def sum_proper_divisor(n):
+    pf = prime_factorization(n)
+    sum_d = 1
+    for p in pf:
+        d = 0
+        for i in range(pf[p]+1):
+            d += p**i
+        sum_d *= d
+    sum_d -= n
+    return sum_d
