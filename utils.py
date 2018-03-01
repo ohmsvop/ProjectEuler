@@ -29,6 +29,8 @@ def lcm(a,b):
     return a*b/r
 
 def prime_factorization(n):
+    if n == 1:
+        return Counter()
     primes = sieve(int(n))
     p_index = 0
     n_factor = []
