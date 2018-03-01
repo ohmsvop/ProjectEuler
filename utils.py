@@ -1,3 +1,5 @@
+from collections import Counter 
+
 def sieve(n):
     "Return all primes <= n."
     np1 = n + 1
@@ -39,5 +41,5 @@ def prime_factorization(n):
             n_factor.append(p)
         else:
             p_index += 1
-
-    return n_factor
+    c = Counter(n_factor)
+    return c

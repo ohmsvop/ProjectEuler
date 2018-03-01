@@ -1,15 +1,12 @@
 # Highly divisible triangular number
 
 from utils import prime_factorization
-from collections import Counter
 
 max_divisor = 0
 for i in range(2, 15000):
     p1 = prime_factorization(i)
     p2 = prime_factorization(i+1)
-    p1.extend(p2)
-    p1.remove(2)
-    c = Counter(p1)
+    c = p1 + p2
     divisor = 1
     for count in c.values():
         divisor *= (count+1)
