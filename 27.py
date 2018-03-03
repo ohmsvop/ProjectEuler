@@ -5,26 +5,13 @@
 from utils import sieve
 
 primes = sieve(3000000)
-
-def is_prime(n):
-    i = 0
-    i_max = len(primes)
-    while True:
-        if primes[i] == n:
-            return True
-        elif primes[i] > n:
-            return False
-        elif i == i_max: 
-            print "reach upperbound"
-            break
-        else:    
-            i += 1
+primes_set = set(primes)
 
 def check_prime_chain(a,b):
     n = 0 
     while True:
         k = n**2 + a*n + b
-        if is_prime(k):
+        if k in primes_set:
             n += 1
         else:
             break

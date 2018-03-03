@@ -3,6 +3,7 @@ from itertools import permutations, product
 import re
 
 primes = sieve(1000000)
+primes_set = set(primes)
 
 def generate_number(template):
     a = re.sub("\*","0",template)
@@ -19,7 +20,7 @@ def generate_number(template):
 def count_primes(number):
     np = 0
     for n in number:
-        if n in primes:
+        if n in primes_set:
             np += 1
     return np
 
