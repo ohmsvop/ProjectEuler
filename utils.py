@@ -1,4 +1,5 @@
 from collections import Counter 
+from math import factorial
 
 def sieve(n):
     "Return all primes <= n."
@@ -56,3 +57,9 @@ def sum_proper_divisor(n):
         sum_d *= d
     sum_d -= n
     return sum_d
+
+def P(n, r):
+    return factorial(n)/factorial(n-r)
+
+def C(n, r):
+    return factorial(n)/factorial(r)/factorial(n-r)
