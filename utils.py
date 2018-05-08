@@ -12,6 +12,14 @@ def sieve(n):
             s[i*i: np1: i] = [0] * len(xrange(i*i, np1, i))
     return filter(None, s)
 
+def is_prime(n):
+    # fermat
+    if n == 2:
+        return True
+    if not n & 1:
+        return False
+    return pow(2, n-1, n) == 1
+
 def gcd(a,b):
     assert type(a) == int
     assert type(b) == int
