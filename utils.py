@@ -77,3 +77,15 @@ def P(n, r):
 
 def C(n, r):
     return factorial(n)/factorial(r)/factorial(n-r)
+
+def continued_fraction(n):
+    m = 0
+    d = 1
+    a = a0 = int(n**0.5)
+    expansion = [a0]
+    while a != 2*a0:
+        m = d*a-m
+        d = (n-m**2)/d
+        a = (a0+m)/d
+        expansion.append(a)
+    return expansion
