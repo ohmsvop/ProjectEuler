@@ -20,6 +20,12 @@ def is_prime(n):
         return False
     return pow(2, n-1, n) == 1
 
+def is_square(n):
+    if int(n**0.5)**2 == n:
+        return True
+    else:
+        return False
+
 def gcd(a,b):
     assert type(a) == int
     assert type(b) == int
