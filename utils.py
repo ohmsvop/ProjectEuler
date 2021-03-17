@@ -3,21 +3,22 @@ from math import factorial
 
 def sieve(n):
     "Return all primes <= n."
-    np1 = n + 1
-    s = range(np1)
-    s[1] = 0
-    sqrtn = int(round(n**0.5))
-    for i in xrange(2, sqrtn + 1):
-        if s[i]:
-            s[i*i: np1: i] = [0] * len(xrange(i*i, np1, i))
+    primes = list(range(n + 1))
+    primes[1] = 0
+    sqrtn = int(round(n ** 0.5))
+    for i in range(2, sqrtn + 1):
+        if primes[i]:
+            for j in range(i*i, n+1, i):
+                primes[j] = 0
     return filter(None, s)
 
 def is_prime(n):
     # fermat
     if n == 2:
         return True
-    if not n & 1:
+    if n % 2 == 0:
         return False
+    # a**(p-1) = 1 (mod p) if a, p coprime
     return pow(2, n-1, n) == 1
 
 def is_square(n):
