@@ -10,7 +10,7 @@ def sieve(n):
         if primes[i]:
             for j in range(i*i, n+1, i):
                 primes[j] = 0
-    return filter(None, s)
+    return filter(None, primes)
 
 def is_prime(n):
     # fermat
