@@ -27,18 +27,10 @@ def is_square(n):
     else:
         return False
 
-def gcd(a,b):
-    assert type(a) == int
-    assert type(b) == int
-    if a < b:
-        a, b = b, a
-    while True:
-        r = a % b
-        if r == 0:
-            break
-        else:
-            a, b = b, r
-    return b
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
 
 def lcm(a,b):
     r = gcd(a,b)
